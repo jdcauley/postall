@@ -1,0 +1,14 @@
+<% _.each(theMail, function (mail) { %>
+  <% _.each(mail.mandrill_events, function (items) { %>
+    <div>
+      <ul>
+        <li><%= items.msg.email %></li>
+        <li><%= items.msg.from_email %></li>
+        <li><%= items.msg.headers.Sender %></li>
+        <li><%= items.msg.headers.Subject %></li>      
+        <li><% items.msg.html %></li>
+      </ul>
+    </div>  
+    
+  <% }) %>
+<% }) %>
